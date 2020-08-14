@@ -5,7 +5,7 @@
       :height="40"
       visual="visual-information"
     />
-    <div class="container w-full mx-auto pt-20 pb-20 px-6 md:px-0">
+    <div class="w-full md:max-w-3xl mx-auto pt-20">
       <h2 class="text-xl pb-5 border-b border-gray-500 border-solid font-bold">
         {{ item.title }}
       </h2>
