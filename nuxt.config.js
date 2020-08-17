@@ -70,9 +70,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-  privateRuntimeConfig: {
-    apiKey: API_KEY,
+  publicRuntimeConfig: {
     apiUrl: API_URL,
+    apiKey: API_KEY,
   },
   generate: {
     routes() {

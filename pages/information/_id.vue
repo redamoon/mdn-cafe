@@ -14,7 +14,7 @@
           {{ item.date | formatDate }}
         </time>
       </div>
-      <!-- eslint-disable-next-line vue/no-v-html -->
+      <!-- eslint-disable-next-line vue/no-v-html-->
       <div class="mb-20" v-html="item.body"></div>
       <base-button name="お知らせへ戻る" link="/information/" />
     </div>
@@ -24,14 +24,13 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData({ params }) {
+  async asyncData({ $config, params }) {
     const { data } = await axios.get(
-      `${process.env.API_URL}/information/${params.id}`,
+      `${$config.apiUrl}/information/${params.id}`,
       {
-        headers: { 'X-API-KEY': process.env.API_KEY },
+        headers: { 'X-API-KEY': $config.apiKey },
       }
     )
-    console.log(data)
     return {
       item: data,
     }

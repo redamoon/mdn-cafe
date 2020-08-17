@@ -23,9 +23,11 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData() {
-    const { data } = await axios.get(`${process.env.API_URL}/information`, {
-      headers: { 'X-API-KEY': process.env.API_KEY },
+  async asyncData({ $config }) {
+    const { data } = await axios.get(`${$config.apiUrl}/information`, {
+      headers: {
+        'X-API-KEY': $config.apiKey,
+      },
     })
     return {
       items: data.contents,

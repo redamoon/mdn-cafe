@@ -24,14 +24,7 @@
           :flag-body="false"
         />
       </div>
-      <div class="mx-auto mb-20 text-center">
-        <nuxt-link
-          class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-teal-500 hover:bg-teal-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md"
-          to="/menu"
-        >
-          メニューの一覧
-        </nuxt-link>
-      </div>
+      <base-button name="メニューの一覧" link="/menu" />
       <base-heading>
         MdN Cafeのお知らせ
       </base-heading>
@@ -44,14 +37,7 @@
           :title="item.title"
         />
       </div>
-      <div class="mx-auto mb-20 text-center">
-        <nuxt-link
-          class="rounded-lg px-4 md:px-5 xl:px-4 py-3 md:py-4 xl:py-3 bg-teal-500 hover:bg-teal-600 md:text-lg xl:text-base text-white font-semibold leading-tight shadow-md"
-          to="/information"
-        >
-          お知らせの一覧
-        </nuxt-link>
-      </div>
+      <base-button name="お知らせ一覧" link="/information" />
     </div>
   </layout-wrapper>
 </template>

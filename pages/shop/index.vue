@@ -1,7 +1,7 @@
 <template>
   <layout-wrapper>
     <layout-visual title="Shop" :height="40" visual="visual-shop" />
-    <div class="container w-full mx-auto pt-20 pb-20 px-6 md:px-0">
+    <div class="w-full md:max-w-3xl mx-auto pt-20">
       <table class="table-auto w-full mb-10">
         <tbody>
           <tr>

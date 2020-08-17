@@ -21,11 +21,10 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData() {
-    const { data } = await axios.get(`${process.env.API_URL}/menu`, {
+  async asyncData({ $config }) {
+    const { data } = await axios.get(`${$config.apiUrl}/menu`, {
       headers: { 'X-API-KEY': process.env.API_KEY },
     })
-    console.log(data.contents)
     return {
       items: data.contents,
     }
