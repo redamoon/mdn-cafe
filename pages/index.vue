@@ -26,7 +26,7 @@
       </div>
       <base-button name="メニューの一覧" link="/menu" />
       <base-heading>
-        MdN Cafeのお知らせ
+        MdN Cafeのお知らせ1
       </base-heading>
       <div class="mb-20">
         <layout-information-list
