@@ -5,9 +5,7 @@
       message="お知らせやメニューをmicroCMSを導入したDEMOサイトになります。"
     />
     <div class="w-full md:max-w-3xl mx-auto pt-20 px-6 md:px-0">
-      <base-heading>
-        MdN Cafeのおすすめメニュー
-      </base-heading>
+      <base-heading> MdN Cafeのおすすめメニュー </base-heading>
       <div class="flex flex-wrap justify-between mb-20 md:mb-0">
         <layout-menu-list
           v-for="(item, index) in menuItems"
@@ -25,9 +23,7 @@
         />
       </div>
       <base-button name="メニューの一覧" link="/menu" />
-      <base-heading>
-        MdN Cafeのお知らせ1
-      </base-heading>
+      <base-heading> MdN Cafeのお知らせ</base-heading>
       <div class="mb-20">
         <layout-information-list
           v-for="(item, index) in infoItems"

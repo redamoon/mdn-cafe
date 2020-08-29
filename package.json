@@ -15,7 +15,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/dotenv": "^1.4.1",
-    "nuxt": "^2.13.0"
+    "nuxt": "^2.14.4"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^3.0.0",
@@ -29,5 +29,7 @@
     "luxon": "^1.24.1",
     "prettier": "^2.0.5"
   },
-  "rules": {"no-console": 0}
+  "rules": {
+    "no-console": 0
+  }
 }

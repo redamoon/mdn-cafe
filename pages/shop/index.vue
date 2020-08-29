@@ -6,9 +6,7 @@
         <tbody>
           <tr>
             <td class="border px-4 py-2">店舗名</td>
-            <td class="border px-4 py-2">
-              MdNカフェ
-            </td>
+            <td class="border px-4 py-2">MdNカフェ</td>
           </tr>
           <tr>
             <td class="border px-4 py-2">店舗住所</td>
@@ -20,15 +18,11 @@
           </tr>
           <tr>
             <td class="border px-4 py-2">座席数</td>
-            <td class="border px-4 py-2">
-              50席
-            </td>
+            <td class="border px-4 py-2">50席</td>
           </tr>
           <tr>
             <td class="border px-4 py-2">アクセス</td>
-            <td class="border px-4 py-2">
-              ◯◯駅5番出口から徒歩1分
-            </td>
+            <td class="border px-4 py-2">◯◯駅5番出口から徒歩1分</td>
           </tr>
         </tbody>
       </table>
