@@ -42,14 +42,14 @@
 import axios from 'axios'
 
 export default {
-  async asyncData() {
-    const info = await axios.get(`${process.env.API_URL}/information`, {
-      headers: { 'X-API-KEY': process.env.API_KEY },
+  async asyncData({ $config }) {
+    const info = await axios.get(`${$config.apiUrl}/information`, {
+      headers: { 'X-API-KEY': $config.apiKey },
     })
     const menu = await axios.get(
-      `${process.env.API_URL}/menu?limit=3&filters=flag[equals]true`,
+      `${$config.apiUrl}/menu?limit=3&filters=flag[equals]true`,
       {
-        headers: { 'X-API-KEY': process.env.API_KEY },
+        headers: { 'X-API-KEY': $config.apiKey },
       }
     )
     return {

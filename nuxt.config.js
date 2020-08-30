@@ -71,6 +71,8 @@ export default {
   build: {},
   publicRuntimeConfig: {
     apiUrl: API_URL,
+  },
+  privateRuntimeConfig: {
     apiKey: API_KEY,
   },
   generate: {

@@ -1,7 +1,7 @@
 <template>
   <layout-wrapper>
     <layout-visual title="Menu" :height="40" visual="visual-menu" />
-    <div class="container w-full mx-auto pt-20 pb-20 px-6 md:px-0">
+    <div class="w-full md:max-w-3xl mx-auto pt-20 px-6 md:px-0">
       <div class="mb-20">
         <layout-menu-list
           v-for="(item, index) in items"
@@ -23,7 +23,7 @@ import axios from 'axios'
 export default {
   async asyncData({ $config }) {
     const { data } = await axios.get(`${$config.apiUrl}/menu`, {
-      headers: { 'X-API-KEY': process.env.API_KEY },
+      headers: { 'X-API-KEY': $config.apiKey },
     })
     return {
       items: data.contents,
