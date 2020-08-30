@@ -1,5 +1,4 @@
 const axios = require('axios')
-require('dotenv').config()
 const { API_KEY, API_URL } = process.env
 
 export default {
