@@ -24,15 +24,26 @@
 <script>
 import axios from 'axios'
 export default {
-  async asyncData({ $config, params }) {
-    const { data } = await axios.get(
-      `${$config.apiUrl}/information/${params.id}`,
-      {
-        headers: { 'X-API-KEY': $config.apiKey },
+  async asyncData({ $config, params, error }) {
+    try {
+      const { data } = await axios.get(
+        `${$config.apiUrl}/information/${params.id}`,
+        {
+          headers: { 'X-API-KEY': $config.apiKey },
+        }
+      )
+      return {
+        item: data,
       }
-    )
+    } catch (err) {
+      error({
+        errorCode: 404,
+      })
+    }
+  },
+  head() {
     return {
-      item: data,
+      title: this.item.title,
     }
   },
 }

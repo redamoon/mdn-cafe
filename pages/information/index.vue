@@ -33,5 +33,10 @@ export default {
       items: data.contents,
     }
   },
+  head() {
+    return {
+      title: 'お知らせ',
+    }
+  },
 }
 </script>

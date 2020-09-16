@@ -29,5 +29,10 @@ export default {
       items: data.contents,
     }
   },
+  head() {
+    return {
+      title: 'メニュー',
+    }
+  },
 }
 </script>

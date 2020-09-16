@@ -17,7 +17,9 @@ export default {
    ** See https://nuxtjs.org/api/configuration-head
    */
   head: {
-    title: process.env.npm_package_name || '',
+    titleTemplate(title) {
+      return (title ? `${title} | ` : '') + process.env.npm_package_name
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -76,6 +78,7 @@ export default {
     apiKey: API_KEY,
   },
   generate: {
+    fallback: true,
     routes() {
       const information = axios
         .get(`${process.env.API_URL}/information`, {
