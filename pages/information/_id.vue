@@ -29,7 +29,7 @@ export default {
       const { data } = await axios.get(
         `${$config.apiUrl}/information/${params.id}`,
         {
-          headers: { 'X-API-KEY': $config.apiKey },
+          headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
         }
       )
       return {
