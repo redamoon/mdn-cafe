@@ -35,7 +35,6 @@
       </div>
       <base-button name="お知らせ一覧" link="/information" />
     </div>
-    {{ infoItems }}
   </layout-wrapper>
 </template>
 
@@ -45,12 +44,12 @@ import axios from 'axios'
 export default {
   async asyncData({ $config }) {
     const info = await axios.get(`${$config.apiUrl}/information?limit=3`, {
-      headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
+      headers: { 'X-API-KEY': $config.apiKey },
     })
     const menu = await axios.get(
       `${$config.apiUrl}/menu?limit=3&filters=flag[equals]true`,
       {
-        headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
+        headers: { 'X-API-KEY': $config.apiKey },
       }
     )
     return {

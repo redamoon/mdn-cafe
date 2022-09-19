@@ -82,7 +82,7 @@ export default {
     routes() {
       const information = axios
         .get(`${process.env.API_URL}/information`, {
-          headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
+          headers: { 'X-API-KEY': process.env.API_KEY },
         })
         .then((res) => {
           return res.data.contents.map((information) => {
