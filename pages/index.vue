@@ -39,7 +39,12 @@
 </template>
 
 <script>
+// import { useRuntimeConfig } from '#app'
+//
+// const config = useRuntimeConfig()
+// console.log('Runtime config:', config.public.apiUrl)
 import axios from 'axios'
+
 export default {
   async asyncData({ $config }) {
     // const info = await fetch(
@@ -58,7 +63,6 @@ export default {
     //     },
     //   }
     // ).then((res) => res.json())
-    console.log($config)
     const info = await axios.get(
       `https://vue-mdn-corporate.microcms.io/api/v1/information?limit=3`,
       {

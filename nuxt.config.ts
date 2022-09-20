@@ -4,9 +4,9 @@ const axios = require('axios')
 export default defineNuxtConfig({
   ssr: false,
   // runtimeConfig: {
-  //   apiUrl: process.env.API_KEY, // variable that can only be accessed on the server side
+  //   apiKey: process.env.NUXT_API_SECRET,
   //   public: {
-  //     apiUrl: process.env.API_BASE_URL, // variable that can also be accessed on the client side
+  //     apiUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
   //   },
   // },
   target: 'static',
@@ -56,7 +56,6 @@ export default defineNuxtConfig({
     '@nuxtjs/eslint-module',
     // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/dotenv',
     'nuxt-storm',
   ],
   /*
@@ -89,8 +88,8 @@ export default defineNuxtConfig({
     fallback: true,
     routes() {
       const information = axios
-        .get(`${process.env.NUXT_PUBLIC_API_BASE_URL}/information`, {
-          headers: { 'X-MICROCMS-API-KEY': process.env.NUXT_API_SECRET },
+        .get(`${process.env.API_BASE_URL}/information`, {
+          headers: { 'X-MICROCMS-API-KEY': process.env.API_KEY },
         })
         .then((res) => {
           return res.data.contents.map((information) => {
