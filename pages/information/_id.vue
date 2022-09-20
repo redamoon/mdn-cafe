@@ -11,7 +11,7 @@
       </h2>
       <div class="pt-4 mb-4">
         <time class="text-gray-700 text-base">
-          {{ item.date | formatDate }}
+          {{ item.date }}
         </time>
       </div>
       <!-- eslint-disable-next-line vue/no-v-html-->

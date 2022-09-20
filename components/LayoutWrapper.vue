@@ -12,7 +12,7 @@ export default {
 
 <style scoped>
 .wrapper {
-  padding-top: 80px;
+  //padding-top: 80px;
   @media (min-width: 768px) {
     padding-top: 0;
   }
