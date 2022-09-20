@@ -11,7 +11,7 @@
   >
     <a :href="'/information/' + id + '/'" class="block px-4 py-3">
       <time class="text-gray-700 text-base mb-1 block md:w-1/6">
-        {{ date | formatDate }}
+        {{ date }}
       </time>
       <div class="md:w-10/12">
         {{ title }}
