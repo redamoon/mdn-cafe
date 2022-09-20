@@ -40,16 +40,39 @@
 
 <script>
 import axios from 'axios'
-
 export default {
   async asyncData({ $config }) {
-    const info = await axios.get(`${$config.apiUrl}/information?limit=3`, {
-      headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
-    })
-    const menu = await axios.get(
-      `${$config.apiUrl}/menu?limit=3&filters=flag[equals]true`,
+    // const info = await fetch(
+    //   `https://vue-mdn-corporate.microcms.io/api/v1/information?limit=3`,
+    //   {
+    //     headers: {
+    //       'X-MICROCMS-API-KEY': '849021d65e784f58a1af5c6d4839037c4c19',
+    //     },
+    //   }
+    // )
+    // const menu = await fetch(
+    //   `https://vue-mdn-corporate.microcms.io/api/v1/menu?limit=3&filters=flag[equals]true`,
+    //   {
+    //     headers: {
+    //       'X-MICROCMS-API-KEY': '849021d65e784f58a1af5c6d4839037c4c19',
+    //     },
+    //   }
+    // ).then((res) => res.json())
+    console.log($config)
+    const info = await axios.get(
+      `https://vue-mdn-corporate.microcms.io/api/v1/information?limit=3`,
       {
-        headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
+        headers: {
+          'X-MICROCMS-API-KEY': '849021d65e784f58a1af5c6d4839037c4c19',
+        },
+      }
+    )
+    const menu = await axios.get(
+      `https://vue-mdn-corporate.microcms.io/api/v1/menu?limit=3&filters=flag[equals]true`,
+      {
+        headers: {
+          'X-MICROCMS-API-KEY': '849021d65e784f58a1af5c6d4839037c4c19',
+        },
       }
     )
     return {
