@@ -23,7 +23,7 @@ import axios from 'axios'
 export default {
   async asyncData({ $config }) {
     const { data } = await axios.get(`${$config.apiUrl}/menu`, {
-      headers: { 'X-API-KEY': $config.apiKey },
+      headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
     })
     return {
       items: data.contents,
