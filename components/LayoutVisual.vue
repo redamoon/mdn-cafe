@@ -33,56 +33,50 @@
         x="0"
         y="0"
       >
-        <polygon
-          class="text-white fill-current"
-          points="2560 0 2560 100 0 100"
-        ></polygon>
+        <polygon class="text-white fill-current" points="2560 0 2560 100 0 100"></polygon>
       </svg>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'LayoutVisual',
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    message: {
-      type: String,
-      default: '',
-    },
-    visual: {
-      type: String,
-      default: 'visual-home',
-    },
-    height: {
-      type: Number,
-      default: 75,
-    },
+<script setup lang="ts">
+defineProps({
+  title: {
+    type: String,
+    default: "",
   },
-}
+  message: {
+    type: String,
+    default: "",
+  },
+  visual: {
+    type: String,
+    default: "visual-home",
+  },
+  height: {
+    type: Number,
+    default: 75,
+  },
+})
 </script>
 
 <style scoped>
 .visual-home {
-  background-image: url('~@/assets/img/visual-home.jpg');
+  background-image: url("/assets/img/visual-home.jpg");
 }
 .visual-concept {
-  background-image: url('~@/assets/img/visual-concept.jpg');
+  background-image: url("/assets/img/visual-concept.jpg");
 }
 .visual-shop {
-  background-image: url('~@/assets/img/visual-shop.jpg');
+  background-image: url("/assets/img/visual-shop.jpg");
 }
 .visual-menu {
-  background-image: url('~@/assets/img/visual-menu.jpg');
+  background-image: url("/assets/img/visual-menu.jpg");
 }
 .visual-information {
-  background-image: url('~@/assets/img/visual-information.jpg');
+  background-image: url("/assets/img/visual-information.jpg");
 }
 .visual-error {
-  background-image: url('~@/assets/img/visual-error.jpg');
+  background-image: url("/assets/img/visual-error.jpg");
 }
 </style>
