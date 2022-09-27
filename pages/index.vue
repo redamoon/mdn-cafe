@@ -8,7 +8,7 @@
       <base-heading> MdN Cafeのおすすめメニュー </base-heading>
       <div class="flex flex-wrap justify-between mb-20 md:mb-0">
         <layout-menu-list
-          v-for="(item, index) in menuItems"
+          v-for="(item, index) in menuItems.contents"
           :key="index"
           :image="item.image"
           :image-url="item.image.url"
@@ -26,7 +26,7 @@
       <base-heading>MdN Cafeのお知らせ</base-heading>
       <div class="mb-20">
         <layout-information-list
-          v-for="(item, index) in infoItems"
+          v-for="(item, index) in infoItems.contents"
           :id="item.id"
           :key="index"
           :date="item.date"
@@ -38,24 +38,7 @@
   </layout-wrapper>
 </template>
 
-<script>
-import axios from 'axios'
-
-export default {
-  async asyncData({ $config }) {
-    const info = await axios.get(`${$config.apiUrl}/information?limit=3`, {
-      headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
-    })
-    const menu = await axios.get(
-      `${$config.apiUrl}/menu?limit=3&filters=flag[equals]true`,
-      {
-        headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
-      }
-    )
-    return {
-      infoItems: info.data.contents,
-      menuItems: menu.data.contents,
-    }
-  },
-}
+<script setup lang="ts">
+const { data: menuItems } = await useFetch("/api/menu?limit=3&filters=flag[equals]true")
+const { data: infoItems } = await useFetch("/api/info?limit=3")
 </script>

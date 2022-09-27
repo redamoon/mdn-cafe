@@ -1,14 +1,10 @@
 <template>
   <layout-wrapper>
-    <layout-visual
-      title="Information"
-      :height="40"
-      visual="visual-information"
-    />
+    <layout-visual :height="40" title="Information" visual="visual-information" />
     <div class="w-full md:max-w-3xl mx-auto pt-20 px-6 md:px-0">
       <div class="mb-20">
         <layout-information-list
-          v-for="(item, index) in items"
+          v-for="(item, index) in items.contents"
           :id="item.id"
           :key="index"
           :date="item.date"
@@ -20,23 +16,9 @@
   </layout-wrapper>
 </template>
 
-<script>
-import axios from 'axios'
-export default {
-  async asyncData({ $config }) {
-    const { data } = await axios.get(`${$config.apiUrl}/information`, {
-      headers: {
-        'X-MICROCMS-API-KEY': $config.apiKey,
-      },
-    })
-    return {
-      items: data.contents,
-    }
-  },
-  head() {
-    return {
-      title: 'お知らせ',
-    }
-  },
-}
+<script setup lang="ts">
+const { data: items } = await useFetch("/api/info")
+useHead({
+  title: 'お知らせ',
+})
 </script>

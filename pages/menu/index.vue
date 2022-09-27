@@ -4,7 +4,7 @@
     <div class="w-full md:max-w-3xl mx-auto pt-20 px-6 md:px-0">
       <div class="mb-20">
         <layout-menu-list
-          v-for="(item, index) in items"
+          v-for="(item, index) in items.contents"
           :key="index"
           :image="item.image"
           :image-url="item.image.url"
@@ -18,21 +18,9 @@
   </layout-wrapper>
 </template>
 
-<script>
-import axios from 'axios'
-export default {
-  async asyncData({ $config }) {
-    const { data } = await axios.get(`${$config.apiUrl}/menu`, {
-      headers: { 'X-MICROCMS-API-KEY': $config.apiKey },
-    })
-    return {
-      items: data.contents,
-    }
-  },
-  head() {
-    return {
-      title: 'メニュー',
-    }
-  },
-}
+<script setup lang="ts">
+const { data: items } = await useFetch("/api/menu")
+useHead({
+  title: 'メニュー'
+})
 </script>

@@ -6,10 +6,7 @@
         打ち合わせやリモートワークができるちょっとした空間
       </h3>
       <div class="clearfix p-4 mb-10">
-        <img
-          class="float-right ml-4 my-2 h-56"
-          src="~/assets/img/concept.jpg"
-        />
+        <img class="float-right ml-4 my-2 h-56" src="~/assets/img/concept.jpg" />
         <div>
           <p class="mb-5">
             MdN Cafe
@@ -29,12 +26,8 @@
   </layout-wrapper>
 </template>
 
-<script>
-export default {
-  head() {
-    return {
-      title: 'コンセプト',
-    }
-  },
-}
+<script setup lang="ts">
+useHead({
+  title: 'コンセプト'
+})
 </script>

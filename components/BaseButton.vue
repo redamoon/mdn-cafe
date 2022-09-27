@@ -9,38 +9,36 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'BaseButton',
-  props: {
-    name: {
-      type: String,
+<script setup lang="ts">
+defineProps({
+  name: {
+    type: String,
       required: true,
-    },
-    link: {
-      type: String,
-      required: true,
-    },
-    classPosition: {
-      type: String,
-      default: 'text-center',
-    },
-    classShape: {
-      type: String,
-      default: 'rounded-lg',
-    },
-    classBackGroundColor: {
-      type: String,
-      default: 'bg-white',
-    },
-    classBackGroundHoverColor: {
-      type: String,
-      default: 'hover:bg-gray-200',
-    },
-    classTextColor: {
-      type: String,
-      default: 'text-gray-800',
-    },
   },
-}
+  link: {
+    type: String,
+      required: true,
+  },
+  classPosition: {
+    type: String,
+  default: "text-center",
+  },
+  classShape: {
+    type: String,
+  default: "rounded-lg",
+  },
+  classBackGroundColor: {
+    type: String,
+  default: "bg-white",
+  },
+  classBackGroundHoverColor: {
+    type: String,
+    default: "hover:bg-gray-200",
+  },
+  classTextColor: {
+    type: String,
+    default: "text-gray-800",
+  },
+})
 </script>
+

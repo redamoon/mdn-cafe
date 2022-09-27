@@ -1,25 +1,16 @@
-/*
- ** TailwindCSS Configuration File
- **
- ** Docs: https://tailwindcss.com/docs/configuration
- ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
- */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  theme: {},
-  variants: {},
+  content: [
+    "./app.vue", // <= ドキュメントからさらに追加
+    "./components/**/*.{vue,js}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./nuxt.config.{js,ts}",
+  ],
+  darkMode: 'media', // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
   plugins: [],
-  future: {
-    removeDeprecatedGapUtilities: true,
-  },
-  purge: {
-    // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
-    enabled: process.env.NODE_ENV === 'production',
-    content: [
-      'components/**/*.vue',
-      'layouts/**/*.vue',
-      'pages/**/*.vue',
-      'plugins/**/*.js',
-      'nuxt.config.js',
-    ],
-  },
 }

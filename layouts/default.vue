@@ -1,7 +1,7 @@
 <template>
   <div>
     <layout-header />
-    <nuxt />
+    <slot />
     <layout-footer />
   </div>
 </template>
