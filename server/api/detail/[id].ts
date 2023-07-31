@@ -1,10 +1,4 @@
-export type ConfigType = {
-  [key: string]: unknown
-  apiKey: string
-  public: {
-    apiUrl: string
-  }
-}
+import { ConfigType } from "~/types/microcms"
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig() as ConfigType
