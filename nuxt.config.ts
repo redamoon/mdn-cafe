@@ -3,15 +3,11 @@ export default defineNuxtConfig({
   typescript: {
     shim: false,
   },
-  // buildModules: ['@nuxtjs/tailwindcss'],
-  css: ["@/assets/css/tailwind.css"],
-  build: {
-    postcss: {
-      postcssOptions: require("./postcss.config.js"),
-    },
-  },
-  publicRuntimeConfig: {
-    apiUrl: API_BASE_URL,
+  modules: ["@nuxtjs/tailwindcss"],
+  runtimeConfig: {
     apiKey: API_KEY,
+    public: {
+      apiUrl: API_BASE_URL,
+    },
   },
 })
